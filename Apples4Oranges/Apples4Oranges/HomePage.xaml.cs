@@ -14,9 +14,11 @@ namespace Apples4Oranges
         {
           InitializeComponent();
           this.Title = "Apples 4 Oranges";
-
-          this.ItemSource = new string[] { "STUFF", "WHERE", "WANT" };
-          this.ItemTemplate = new DataTemplate(() => { return new ContentPage(); }); 
+            var viewModel = new HomePageViewModel();
+          this.DataContext = viewModel;
+          this.ItemSource = new string[] { "On Offer", "My Offers" };
+          listViewOnOffer.ItemsSource = viewModel.OfferEntries;
+          //this.ItemTemplate = new DataTemplate(() => { return new ContentPage(); }); 
         }
     }
 }

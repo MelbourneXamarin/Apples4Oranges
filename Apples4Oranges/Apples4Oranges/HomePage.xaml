@@ -1,6 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Apples4Oranges.HomePage">
-	<Label Text="Apples 4 Oranges" VerticalOptions="Center" HorizontalOptions="Center" />
+             x:Class="Apples4Oranges.HomePage" Title="What's On Offer">
+  <ContentPage.Resource>
+    <BooleanToVisibilityConverter x:key="BooleanToVisibilityConverter" />
+  </ContentPage.Resource>
+	<Label Text="Apples 4 Oranges" VerticalOptions="Top" HorizontalOptions="Center" />
+  <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="5,20,5,0"
+               Visibility="{Binding ShowOnOffer, Converter={StaticResource BooleanToVisiblityConverter}" >
+    <Entry PlaceHolder="Search specific offer"/>
+    <ListView x:Name="listViewOnOffer">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.ContextActions>
+              <!--<MenuItem Clicked="OnMore"
+               Text="More" />
+            <MenuItem Clicked="OnDelete"
+               Text="Delete" IsDestructive="True" />-->
+            </ViewCell.ContextActions>
+            <ImageCell
+                Text="{Binding Name}"
+                Detail="{Binding Location, StringFormat='{0}'}"
+                ImageSource="{Binding Image}">
+            </ImageCell>
+            <!--<StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+            <ImageCell  
+            <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+              
+              <Label Text="{Binding .}" YAlign="Center" FontSize="Medium" />
+              <Label Text="hint: trigger a context action" YAlign="Center" FontSize="Small" />
+            </StackLayout>
+          </StackLayout>-->
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
 </ContentPage>
