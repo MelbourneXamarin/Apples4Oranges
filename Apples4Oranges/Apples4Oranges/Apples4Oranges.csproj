@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Model\UserProfile.cs" />
     <Compile Include="View\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
