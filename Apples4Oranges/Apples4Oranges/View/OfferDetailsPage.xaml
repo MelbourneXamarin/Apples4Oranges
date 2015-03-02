@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Apples4Oranges.Converters;assembly=Apples4Oranges"
+             x:Class="Apples4Oranges.OfferDetailsPage" Title="Offer Details">
+  <!--<Entry Placeholder="Search specific offer"/>-->
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <converters:BaseTypeToStringFormatConverter x:Key="AvailableTillDateConverter" Format="d MMMM yyyy" />
+      <converters:BaseTypeToStringFormatConverter x:Key="ImageLocationConverter" Prefix="..\Assets\Images\"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <StackLayout Orientation="Vertical">
+    <Label Text="Product Or Service Name" />
+    <TextBox Placeholder="Enter offer name" />
+    <Label Text="Available Location"/>
+    <TextBox Placeholder="Enter the suburb name"/>
+    <Label Text="Available between"/>
+    <DatePicker Format="D" VerticalOptions="CenterAndExpand" /> 
+    
+  </StackLayout>
+</ContentPage>

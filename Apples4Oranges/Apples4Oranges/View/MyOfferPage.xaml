@@ -10,7 +10,19 @@
       <converters:BaseTypeToStringFormatConverter x:Key="ImageLocationConverter" Prefix="..\Assets\Images\"/>
     </ResourceDictionary>
   </ContentPage.Resources>
-    <ListView x:Name="listViewOnOffer" RowHeight="150" BackgroundColor="Transparent">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition  Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="45" />
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <StackLayout Orientation="Horizontal" Padding="0,20,0,0" Grid.Row="0">
+    <Label Text="Post a new Offer"/>
+    <Button Text="Add" x:Name="postNewOfferButton" HorizontalOptions="EndAndExpand"/>
+  </StackLayout>
+    <ListView x:Name="listViewOnOffer" Grid.Row="1" RowHeight="150" BackgroundColor="Transparent">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
@@ -36,5 +48,5 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-
+  </Grid>
 </ContentPage>

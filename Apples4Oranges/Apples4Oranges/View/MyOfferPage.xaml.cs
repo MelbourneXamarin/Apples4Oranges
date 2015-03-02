@@ -15,6 +15,13 @@ namespace Apples4Oranges
             InitializeComponent();
 			var viewModel = new HomePageViewModel ();
 			listViewOnOffer.ItemsSource = viewModel.MyOfferEntries;
+            postNewOfferButton.Clicked += PostNewOfferButton_Click;
         }		 
+
+        private async void PostNewOfferButton_Click(object sender, EventArgs e)
+        {
+            var details = new OfferDetailsPage();
+            await Navigation.PushModalAsync(details);
+        }
     }
 }
