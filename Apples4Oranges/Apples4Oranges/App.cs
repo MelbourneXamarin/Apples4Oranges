@@ -12,7 +12,7 @@ namespace Apples4Oranges
         public App()
         {
             // The root page of your application
-            TabbedPage navPage = new TabbedPage(new HomePage());
+            TabbedPage navPage = new HomePage();
             MainPage = navPage;
         }
 

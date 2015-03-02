@@ -1,8 +1,22 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.SelectDevice" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Apples4Oranges\Apples4Oranges\View\HomePage.xaml">
+    <Files>
+      <File FileName="Apples4Oranges\Apples4Oranges\View\HomePage.xaml" Line="14" Column="14" />
+      <File FileName="Apples4Oranges\Apples4Oranges\View\HomePage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Apples4Oranges\Apples4Oranges\View\OfferPage.xaml" Line="1" Column="1" />
+      <File FileName="Apples4Oranges\Apples4Oranges\View\OfferPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Apples4Oranges\Apples4Oranges\ViewModel\OfferEntryViewModel.cs" Line="1" Column="1" />
+      <File FileName="Apples4Oranges\Apples4Oranges\Converters\BooleanToVisibilityConverter.cs" Line="1" Column="1" />
+      <File FileName="Apples4Oranges\Apples4Oranges\Service\Apples4OrangesService.cs" Line="1" Column="1" />
+      <File FileName="Apples4Oranges\Apples4Oranges\App.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>Apples4Oranges\Apples4Oranges.iOS\Apples4Oranges.iOS.csproj</String>
+  </DisabledProjects>
 </Properties>
