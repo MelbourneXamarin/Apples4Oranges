@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apples4Oranges.Droid", "App
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apples4Oranges.WinPhone", "Apples4Oranges\Apples4Oranges.WinPhone\Apples4Oranges.WinPhone.csproj", "{826A7F8E-AEA6-411A-93ED-2BD38EF7F26A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{DFEF6FCE-6343-44C5-9D84-4AA62E1AA411}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
