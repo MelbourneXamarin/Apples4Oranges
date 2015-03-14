@@ -10,13 +10,53 @@
       <converters:BaseTypeToStringFormatConverter x:Key="ImageLocationConverter" Prefix="..\Assets\Images\"/>
     </ResourceDictionary>
   </ContentPage.Resources>
-  <StackLayout Orientation="Vertical">
-    <Label Text="Product Or Service Name" />
-    <TextBox Placeholder="Enter offer name" />
-    <Label Text="Available Location"/>
-    <TextBox Placeholder="Enter the suburb name"/>
-    <Label Text="Available between"/>
-    <DatePicker Format="D" VerticalOptions="CenterAndExpand" /> 
-    
-  </StackLayout>
+  <Grid Padding="10">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition  Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="20" />
+      <RowDefinition Height="60" />
+      <RowDefinition Height="20"/>
+      <RowDefinition Height="60" />
+      <RowDefinition Height="20"/>
+      <RowDefinition Height="60" />
+      <RowDefinition Height="20"/>
+      <RowDefinition Height="120" />
+      <RowDefinition Height="20"/>
+      <RowDefinition Height="60" />
+    </Grid.RowDefinitions>
+    <Label Grid.Row="0" Text="Product Or Service Name" FontSize="Medium"/>
+    <Entry Grid.Row="1" Placeholder="Enter offer name" Text="{Binding Name}"/>
+    <Label Grid.Row="2" Text="Available Location" FontSize="Medium"/>
+    <Entry Grid.Row="3" Placeholder="Enter the suburb name" Text="{Binding Location}"/>
+    <Label Grid.Row="4" Text="Available between" FontSize="Medium"/>
+    <DatePicker Grid.Row="5" Format="D" VerticalOptions="CenterAndExpand" />
+    <Label Grid.Row="6" Text="Would love to trade for" FontSize="Medium"/>
+    <Grid Grid.Row="7" Padding="25, 10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition  Width="Auto"/>
+        <ColumnDefinition  Width="Auto"/>
+        <ColumnDefinition  Width="Auto"/>
+        <ColumnDefinition  Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="30"/>
+        <RowDefinition Height="30"/>
+        <RowDefinition Height="30"/>
+        <RowDefinition Height="30"/>
+      </Grid.RowDefinitions>
+      <Button Grid.Row="0" Grid.Column="0" Text="Oranges" BackgroundColor="Gray" HeightRequest="20" FontSize="Micro"/>
+      <Button Grid.Row="0" Grid.Column="1" Text="Peaches" BackgroundColor="Gray" HeightRequest="20" FontSize="Micro"/>
+      <Button Grid.Row="0" Grid.Column="2" Text="Blueberries" BackgroundColor="Gray" HeightRequest="20" FontSize="Micro"/>
+      <Button Grid.Row="0" Grid.Column="3" Text="Carrots" BackgroundColor="Gray" HeightRequest="20" FontSize="Micro"/>
+      <Button Grid.Row="1" Grid.Column="0" Text="Eggs" BackgroundColor="Gray" HeightRequest="20" FontSize="Micro"/>
+      <Button Grid.Row="1" Grid.Column="1" Text="Stone fruits" BackgroundColor="Gray" HeightRequest="20" FontSize="Micro"/>
+      <Button Grid.Row="1" Grid.Column="2" Text="Honey" BackgroundColor="Gray" HeightRequest="20" FontSize="Micro"/>
+      <Button Grid.Row="1" Grid.Column="3" Text="Milk" BackgroundColor="Gray" HeightRequest="20" FontSize="Micro"/>
+      <Button Grid.Row="2" Grid.Column="0" Text="Free hugs" BackgroundColor="Gray" HeightRequest="20" FontSize="Micro"/>
+      <Button Grid.Row="2" Grid.Column="3" Text="+" BackgroundColor="Gray" FontAttributes="Bold" HeightRequest="20" FontSize="Small"/>
+    </Grid>
+    <Button Grid.Row="9" Text="Post Offer" />
+  </Grid>
 </ContentPage>

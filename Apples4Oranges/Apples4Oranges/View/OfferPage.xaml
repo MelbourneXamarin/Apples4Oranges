@@ -10,21 +10,21 @@
       <converters:BaseTypeToStringFormatConverter x:Key="ImageLocationConverter" Prefix="..\Assets\Images\"/>
     </ResourceDictionary>
   </ContentPage.Resources>
-    <ListView x:Name="listViewOnOffer" RowHeight="100" BackgroundColor="Transparent">
+    <ListView x:Name="listViewOnOffer" RowHeight="65" BackgroundColor="Transparent">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <Grid Padding="0,5">
+            <Grid>
               <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="65"/>
                 <ColumnDefinition Width="*"/>
               </Grid.ColumnDefinitions>
               <Image BackgroundColor="Gray"  Source="{Binding ImageSource, Converter={StaticResource ImageLocationConverter}}"/>
-            <StackLayout Padding="5, 5, 5, 5" HorizontalOptions="StartAndExpand" Orientation="Vertical" Grid.Column="1">
-              <Label Text="{Binding Name}" YAlign="Center" FontSize="32"/>
+            <StackLayout Orientation="Vertical" Grid.Column="1">
+              <Label Text="{Binding Name}" YAlign="Center" FontSize="24"/>
               <StackLayout Orientation="Horizontal">
-              <Label Text="{Binding Location}" YAlign="Center" FontSize="Medium"  HorizontalOptions="FillAndExpand"/>
-              <Label Text="{Binding AvailableTill, Converter={StaticResource AvailableTillDateConverter}}" YAlign="Center" FontSize="Medium" HorizontalOptions="EndAndExpand"/>
+              <Label Text="{Binding Location}" FontSize="Medium"/>
+              <Label Text="{Binding AvailableTill, Converter={StaticResource AvailableTillDateConverter}}" FontSize="Medium" HorizontalOptions="EndAndExpand"/>
               </StackLayout>
             </StackLayout>
             </Grid>

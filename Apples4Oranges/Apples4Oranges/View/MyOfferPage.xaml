@@ -6,7 +6,7 @@
   <!--<Entry Placeholder="Search specific offer"/>-->
   <ContentPage.Resources>
     <ResourceDictionary>
-      <converters:BaseTypeToStringFormatConverter x:Key="AvailableTillDateConverter" Format="d MMMM yyyy" />
+      <converters:BaseTypeToStringFormatConverter x:Key="AvailableTillDateConverter" Format="d MMMM yyyy" Prefix="   " />
       <converters:BaseTypeToStringFormatConverter x:Key="ImageLocationConverter" Prefix="..\Assets\Images\"/>
     </ResourceDictionary>
   </ContentPage.Resources>
@@ -15,34 +15,49 @@
       <ColumnDefinition  Width="*"/>
     </Grid.ColumnDefinitions>
     <Grid.RowDefinitions>
-      <RowDefinition Height="45" />
+      <RowDefinition Height="40" />
+      <RowDefinition Height="40" />
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
-    <StackLayout Orientation="Horizontal" Padding="0,20,0,0" Grid.Row="0">
-    <Label Text="Post a new Offer"/>
-    <Button Text="Add" x:Name="postNewOfferButton" HorizontalOptions="EndAndExpand"/>
-  </StackLayout>
-    <ListView x:Name="listViewOnOffer" Grid.Row="1" RowHeight="150" BackgroundColor="Transparent">
+   
+      <Grid Grid.Row="0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="60"/>
+        </Grid.ColumnDefinitions>
+        <Label Text="Post a new Offer" Grid.Row="0" FontSize="18" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Button Text="Add"  FontSize="Small" x:Name="postNewOfferButton" Grid.Column="1" HeightRequest="20"/>
+      </Grid>
+
+    <Label Text="Current Offers" Grid.Row="1" FontSize="Large" YAlign="Center"/>
+
+    <ListView x:Name="listViewMyOffer" Grid.Row="2" RowHeight="70" BackgroundColor="Transparent">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <Grid Padding="0,5">
+            <Grid>
               <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="65"/>
                 <ColumnDefinition Width="*"/>
               </Grid.ColumnDefinitions>
               <Image BackgroundColor="Gray"  Source="{Binding ImageSource, Converter={StaticResource ImageLocationConverter}}"/>
-              <StackLayout Padding="5, 5, 5, 5" HorizontalOptions="StartAndExpand" Orientation="Vertical" Grid.Column="1">
-
-                <StackLayout Orientation="Horizontal">
-                  <Label Text="{Binding Name}" YAlign="Center" FontSize="32" HorizontalOptions="StartAndExpand"/>
-                  <Button HorizontalOptions="FillAndExpand" Text="Edit" WidthRequest="25" BackgroundColor="Silver"/>
+              <Grid Grid.Column="1">
+                  <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*"/>
+                      <ColumnDefinition Width="60"/>
+                   </Grid.ColumnDefinitions>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                  </Grid.RowDefinitions>
+                  <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="0" YAlign="Center" FontSize="24" HorizontalOptions="StartAndExpand"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="6 views  2 offers" FontSize="Small" HorizontalOptions="EndAndExpand"/>
+                
+                <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                  <Label Text="{Binding Location}" FontSize="Medium"/>
+                  <Label Text="{Binding AvailableTill, Converter={StaticResource AvailableTillDateConverter}}" FontSize="Medium" HorizontalOptions="EndAndExpand"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                  <Label Text="{Binding Location}" YAlign="Center" FontSize="Medium"  HorizontalOptions="StartAndExpand"/>
-                  <Label Text="{Binding AvailableTill, Converter={StaticResource AvailableTillDateConverter}}" YAlign="Center" FontSize="Medium" HorizontalOptions="EndAndExpand" />
-                </StackLayout>
-              </StackLayout>
+              </Grid>
             </Grid>
           </ViewCell>
         </DataTemplate>
