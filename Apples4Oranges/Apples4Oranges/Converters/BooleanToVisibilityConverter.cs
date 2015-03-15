@@ -5,7 +5,7 @@ using Xamarin.Forms;
 namespace Apples4Oranges.Converters
 {
 
-    public class InvertBoolenConverter : IValueConverter
+    public class InvertedBoolenConverter : IValueConverter
     {
 
         #region IValueConverter implementation

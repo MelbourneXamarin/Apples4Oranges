@@ -14,11 +14,10 @@ namespace Apples4Oranges
         {
 			InitializeComponent ();
 			Title = "Apples 4 Oranges";
-            //ItemsSource = new string[] { "On Offer", "My Offers" };
-            //ItemTemplate = new DataTemplate (() => new OfferPage ()); 
-
+            
             Children.Add(new OfferPage());
             Children.Add(new MyOfferPage());
+            Children.Add(new ContentPage() { Title = "My Profile" });
         }
     }
 }

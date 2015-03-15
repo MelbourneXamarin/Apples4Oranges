@@ -13,13 +13,13 @@ namespace Apples4Oranges
         public  MyOfferPage()
         {
             InitializeComponent();
-			var viewModel = new HomePageViewModel ();
-            listViewMyOffer.ItemsSource = viewModel.MyOfferEntries;
+			listViewMyOffer.ItemsSource = AppViewModel.MyOfferEntries;
             listViewMyOffer.ItemSelected += async(sender, e) =>
             {
                 if (e.SelectedItem == null) 
                     return; // don't do anything if we just de-selected the row
                 // do something with e.SelectedItem
+                AppViewModel.SelectedOfferEntry = e.SelectedItem as Model.OfferEntry;
                 var details = new OfferDetailsPage();
                 await Navigation.PushModalAsync(details);
 

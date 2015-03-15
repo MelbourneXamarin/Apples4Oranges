@@ -13,7 +13,9 @@ namespace Apples4Oranges
         public  OfferDetailsPage()
         {
             InitializeComponent();
-			
+            var viewModel = new OfferDetailsPageViewModel();
+            viewModel.OfferEntry = AppViewModel.SelectedOfferEntry;
+            this.BindingContext = viewModel;
         }		 
     }
 }
