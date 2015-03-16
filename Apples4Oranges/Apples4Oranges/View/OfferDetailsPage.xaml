@@ -2,6 +2,7 @@
 <ContentPage x:Class="Apples4Oranges.OfferDetailsPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Apples4Oranges.Controls;assembly=Apples4Oranges"
              xmlns:converters="clr-namespace:Apples4Oranges.Converters;assembly=Apples4Oranges"
              Title="Offer Details"
              Padding="5,0">
@@ -14,110 +15,73 @@
     </ContentPage.Resources>
 
     <ScrollView Orientation="Vertical">
-  
-    <StackLayout Orientation="Vertical" Padding="10,20,10,10" Spacing="10">
-        <Label FontSize="Medium" Text="Product Or Service Name" />
-        <Entry Placeholder="Enter offer name" Text="{Binding OfferEntry.Name}" />
-        <Label FontSize="Medium" Text="Available Location" />
-        <Entry Placeholder="Enter the suburb name" Text="{Binding OfferEntry.Location}" />
-        <Label FontSize="Medium" Text="Available between" />
-        <StackLayout Orientation="Horizontal">
-            <DatePicker Date="{Binding OfferEntry.AvailableFrom}" Format="ddd dd/MM/yyyy" />
-            <Label FontSize="Medium"
-                   Text="and"
-                   VerticalOptions="Center" />
-            <DatePicker Date="{Binding OfferEntry.AvailableTill}" Format="ddd dd/MM/yyyy" />
+
+        <StackLayout Orientation="Vertical"
+                     Padding="10,20,10,10"
+                     Spacing="10">
+            <Label FontSize="Medium" Text="Product Or Service Name" />
+            <Entry Placeholder="Enter offer name" Text="{Binding OfferEntry.Name}" />
+            <Label FontSize="Medium" Text="Available Location" />
+            <Entry Placeholder="Enter the suburb name" Text="{Binding OfferEntry.Location}" />
+            <Label FontSize="Medium" Text="Available between" />
+            <StackLayout Orientation="Horizontal">
+                <DatePicker Date="{Binding OfferEntry.AvailableFrom}" Format="ddd dd/MM/yyyy" />
+                <Label FontSize="Medium"
+                       Text="and"
+                       VerticalOptions="Center" />
+                <DatePicker Date="{Binding OfferEntry.AvailableTill}" Format="ddd dd/MM/yyyy" />
+            </StackLayout>
+            <Label Grid.Row="6"
+                   FontSize="Medium"
+                   Text="Would love to trade for" />
+
+            <controls:WrapLayout Orientation="Horizontal"
+                                 Padding="2"
+                                 Spacing="2">
+                <controls:TagView BackgroundColor="Gray"
+                                  Padding="5"
+                                  Tag="Oranges" />
+                <controls:TagView BackgroundColor="Gray"
+                                  Padding="5"
+                                  Tag="Peaches" />
+                <controls:TagView BackgroundColor="Gray"
+                                  Padding="5"
+                                  Tag="Berries" />
+                <controls:TagView BackgroundColor="Gray"
+                                  Padding="5"
+                                  Tag="Carrots" />
+                <controls:TagView BackgroundColor="Gray"
+                                  Padding="5"
+                                  Tag="Egg" />
+                <controls:TagView BackgroundColor="Gray"
+                                  Padding="5"
+                                  Tag="Stone Fruits" />
+                <controls:TagView BackgroundColor="Gray"
+                                  Padding="5"
+                                  Tag="Honey" />
+                <controls:TagView BackgroundColor="Gray"
+                                  Padding="5"
+                                  Tag="Milk" />
+                <controls:TagView BackgroundColor="Gray"
+                                  Padding="5"
+                                  Tag="Free Hugs" />
+                <controls:TagView BackgroundColor="Gray"
+                                  Padding="5"
+                                  Tag="Add..." />
+            </controls:WrapLayout>
+
+            <Button Grid.Row="9"
+                    IsVisible="{Binding IsNewOffer}"
+                    Text="Post Offer" />
+            <Button Grid.Row="9"
+                    IsVisible="{Binding IsOwnOffer}"
+                    Text="Save Offer" />
+            <Button Grid.Row="9"
+                    IsVisible="{Binding IsOwnOffer,
+                                        Converter={StaticResource InvertedBoolenConverter}}"
+                    Text="Contact Offerer" />
+
+
         </StackLayout>
-        <Label Grid.Row="6"
-               FontSize="Medium"
-               Text="Would love to trade for" />
-        <Grid Grid.Row="7" Padding="25, 10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-            </Grid.RowDefinitions>
-            <Button Grid.Row="0"
-                    Grid.Column="0"
-                    BackgroundColor="Gray"
-                    FontSize="Micro"
-                    HeightRequest="20"
-                    Text="Oranges X" />
-
-            <Button Grid.Row="0"
-                    Grid.Column="1"
-                    BackgroundColor="Gray"
-                    FontSize="Micro"
-                    HeightRequest="20"
-                    Text="Peaches X" />
-            <Button Grid.Row="0"
-                    Grid.Column="2"
-                    BackgroundColor="Gray"
-                    FontSize="Micro"
-                    HeightRequest="20"
-                    Text="Berries X" />
-            <Button Grid.Row="0"
-                    Grid.Column="3"
-                    BackgroundColor="Gray"
-                    FontSize="Micro"
-                    HeightRequest="20"
-                    Text="Carrots X" />
-            <Button Grid.Row="1"
-                    Grid.Column="0"
-                    BackgroundColor="Gray"
-                    FontSize="Micro"
-                    HeightRequest="20"
-                    Text="Eggs X" />
-            <Button Grid.Row="1"
-                    Grid.Column="1"
-                    BackgroundColor="Gray"
-                    FontSize="Micro"
-                    HeightRequest="20"
-                    Text="Stone fruits X" />
-            <Button Grid.Row="1"
-                    Grid.Column="2"
-                    BackgroundColor="Gray"
-                    FontSize="Micro"
-                    HeightRequest="20"
-                    Text="Honey X" />
-            <Button Grid.Row="1"
-                    Grid.Column="3"
-                    BackgroundColor="Gray"
-                    FontSize="Micro"
-                    HeightRequest="20"
-                    Text="Milk X" />
-            <Button Grid.Row="2"
-                    Grid.Column="0"
-                    BackgroundColor="Gray"
-                    FontSize="Micro"
-                    HeightRequest="20"
-                    Text="Free hugs X" />
-            <Button Grid.Row="2"
-                    Grid.Column="3"
-                    BackgroundColor="Gray"
-                    FontAttributes="Bold"
-                    FontSize="Small"
-                    HeightRequest="20"
-                    Text="+" />
-        </Grid>
-        <Button Grid.Row="9"
-                IsVisible="{Binding IsNewOffer}"
-                Text="Post Offer" />
-        <Button Grid.Row="9"
-                IsVisible="{Binding IsOwnOffer}"
-                Text="Save Offer" />
-        <Button Grid.Row="9"
-                IsVisible="{Binding IsOwnOffer, Converter={StaticResource InvertedBoolenConverter}}"
-                Text="Contact Offerer" />
-
-
-    </StackLayout>
     </ScrollView>
 </ContentPage>
