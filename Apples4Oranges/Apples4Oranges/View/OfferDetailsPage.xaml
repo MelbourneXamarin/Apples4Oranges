@@ -13,6 +13,8 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
+    <ScrollView Orientation="Vertical">
+  
     <StackLayout Orientation="Vertical" Padding="10,20,10,10" Spacing="10">
         <Label FontSize="Medium" Text="Product Or Service Name" />
         <Entry Placeholder="Enter offer name" Text="{Binding OfferEntry.Name}" />
@@ -117,4 +119,5 @@
 
 
     </StackLayout>
+    </ScrollView>
 </ContentPage>
