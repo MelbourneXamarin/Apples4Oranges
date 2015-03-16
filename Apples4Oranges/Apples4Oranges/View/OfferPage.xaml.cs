@@ -21,7 +21,7 @@ namespace Apples4Oranges
                 // do something with e.SelectedItem
                 AppViewModel.SelectedOfferEntry = e.SelectedItem as Model.OfferEntry;
                 var details = new OfferDetailsPage();
-                await Navigation.PushModalAsync(details);
+                await Navigation.PushAsync(details);
 
                 ((ListView)sender).SelectedItem = null; // de-select the row
             };
