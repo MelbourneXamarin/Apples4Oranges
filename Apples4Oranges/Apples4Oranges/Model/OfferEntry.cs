@@ -54,7 +54,7 @@ namespace Apples4Oranges.Model
         /// <summary>
         /// Just a flag to mark Complete / Active
         /// </summary>
-        public bool Actdowsive { get; set; }
+        public bool Active { get; set; }
 
         /// <summary>
         /// How many views on this offer
@@ -66,6 +66,5 @@ namespace Apples4Oranges.Model
         /// </summary>
         public int Replies { get; set; }
 
-        public string ViewsAndReplies { get { return String.Format("{0} views   {1} Replies", Views, Replies); } }
      }
 }
