@@ -1,36 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage x:Class="Apples4Oranges.OfferPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:Apples4Oranges.Converters;assembly=Apples4Oranges"
-             x:Class="Apples4Oranges.OfferPage" Title="Offers">
-  <!--<Entry Placeholder="Search specific offer"/>-->
-  <ContentPage.Resources>
-    <ResourceDictionary>
-      <converters:BaseTypeToStringFormatConverter x:Key="AvailableTillDateConverter" Format="d MMMM yyyy" />
-      <converters:BaseTypeToStringFormatConverter x:Key="ImageLocationConverter" Prefix="..\Assets\Images\"/>
-    </ResourceDictionary>
-  </ContentPage.Resources>
-    <ListView x:Name="listViewOnOffer" RowHeight="100" BackgroundColor="Transparent">
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-            <Grid Padding="0,5">
-              <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100"/>
-                <ColumnDefinition Width="*"/>
-              </Grid.ColumnDefinitions>
-              <Image BackgroundColor="Gray"  Source="{Binding ImageSource, Converter={StaticResource ImageLocationConverter}}"/>
-            <StackLayout Padding="5, 5, 5, 5" HorizontalOptions="StartAndExpand" Orientation="Vertical" Grid.Column="1">
-              <Label Text="{Binding Name}" YAlign="Center" FontSize="32"/>
-              <StackLayout Orientation="Horizontal">
-              <Label Text="{Binding Location}" YAlign="Center" FontSize="Medium"  HorizontalOptions="FillAndExpand"/>
-              <Label Text="{Binding AvailableTill, Converter={StaticResource AvailableTillDateConverter}}" YAlign="Center" FontSize="Medium" HorizontalOptions="EndAndExpand"/>
-              </StackLayout>
-            </StackLayout>
-            </Grid>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
+             Title="Offers"
+             Padding="10,0">
+    <!--<Entry Placeholder="Search specific offer"/>-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:BaseTypeToStringFormatConverter x:Key="AvailableTillDateConverter" Format="d MMMM yyyy" />
+            <converters:BaseTypeToStringFormatConverter x:Key="ImageLocationConverter" Prefix="..\Assets\Images\" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ListView x:Name="listViewOnOffer"
+              BackgroundColor="Transparent"
+              RowHeight="65">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="65" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image BackgroundColor="Gray" Source="{Binding ImageSource, Converter={StaticResource ImageLocationConverter}}" />
+                        <StackLayout Grid.Column="1" Orientation="Vertical">
+                            <Label FontSize="24"
+                                   Text="{Binding Name}"
+                                   YAlign="Center" />
+                            <StackLayout Orientation="Horizontal">
+                                <Label FontSize="Medium" Text="{Binding Location}" />
+                                <Label FontSize="Medium"
+                                       HorizontalOptions="EndAndExpand"
+                                       Text="{Binding AvailableTill,
+                                                      Converter={StaticResource AvailableTillDateConverter}}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
     </ListView>
 
 </ContentPage>

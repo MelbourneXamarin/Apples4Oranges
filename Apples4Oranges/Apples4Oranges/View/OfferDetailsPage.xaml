@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Apples4Oranges.OfferDetailsPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Apples4Oranges.Converters;assembly=Apples4Oranges"
+             Title="Offer Details"
+             Padding="5,0">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InvertedBoolenConverter x:Key="InvertedBoolenConverter" />
+            <converters:BaseTypeToStringFormatConverter x:Key="AvailableDateConverter" Format="d MMMM yyyy" />
+            <converters:BaseTypeToStringFormatConverter x:Key="ImageLocationConverter" Prefix="..\Assets\Images\" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid Padding="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="120" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0"
+               FontSize="Medium"
+               Text="Product Or Service Name" />
+        <Entry Grid.Row="1"
+               Placeholder="Enter offer name"
+               Text="{Binding OfferEntry.Name}" />
+        <Label Grid.Row="2"
+               FontSize="Medium"
+               Text="Available Location" />
+        <Entry Grid.Row="3"
+               Placeholder="Enter the suburb name"
+               Text="{Binding OfferEntry.Location}" />
+        <Label Grid.Row="4"
+               FontSize="Medium"
+               Text="Available between" />
+        <StackLayout Grid.Row="5" Orientation="Horizontal">
+            <DatePicker Date="{Binding OfferEntry.AvailableFrom}" Format="ddd dd/MM/yyyy" />
+            <Label FontSize="Medium"
+                   Text="and"
+                   VerticalOptions="Center" />
+            <DatePicker Date="{Binding OfferEntry.AvailableTill}"
+                        Format="ddd dd/MM/yyyy"
+                        HorizontalOptions="EndAndExpand" />
+        </StackLayout>
+        <Label Grid.Row="6"
+               FontSize="Medium"
+               Text="Would love to trade for" />
+        <Grid Grid.Row="7" Padding="25, 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0"
+                    Grid.Column="0"
+                    BackgroundColor="Gray"
+                    FontSize="Micro"
+                    HeightRequest="20"
+                    Text="Oranges X" />
+
+            <Button Grid.Row="0"
+                    Grid.Column="1"
+                    BackgroundColor="Gray"
+                    FontSize="Micro"
+                    HeightRequest="20"
+                    Text="Peaches X" />
+            <Button Grid.Row="0"
+                    Grid.Column="2"
+                    BackgroundColor="Gray"
+                    FontSize="Micro"
+                    HeightRequest="20"
+                    Text="Berries X" />
+            <Button Grid.Row="0"
+                    Grid.Column="3"
+                    BackgroundColor="Gray"
+                    FontSize="Micro"
+                    HeightRequest="20"
+                    Text="Carrots X" />
+            <Button Grid.Row="1"
+                    Grid.Column="0"
+                    BackgroundColor="Gray"
+                    FontSize="Micro"
+                    HeightRequest="20"
+                    Text="Eggs X" />
+            <Button Grid.Row="1"
+                    Grid.Column="1"
+                    BackgroundColor="Gray"
+                    FontSize="Micro"
+                    HeightRequest="20"
+                    Text="Stone fruits X" />
+            <Button Grid.Row="1"
+                    Grid.Column="2"
+                    BackgroundColor="Gray"
+                    FontSize="Micro"
+                    HeightRequest="20"
+                    Text="Honey X" />
+            <Button Grid.Row="1"
+                    Grid.Column="3"
+                    BackgroundColor="Gray"
+                    FontSize="Micro"
+                    HeightRequest="20"
+                    Text="Milk X" />
+            <Button Grid.Row="2"
+                    Grid.Column="0"
+                    BackgroundColor="Gray"
+                    FontSize="Micro"
+                    HeightRequest="20"
+                    Text="Free hugs X" />
+            <Button Grid.Row="2"
+                    Grid.Column="3"
+                    BackgroundColor="Gray"
+                    FontAttributes="Bold"
+                    FontSize="Small"
+                    HeightRequest="20"
+                    Text="+" />
+        </Grid>
+        <Button Grid.Row="9"
+                IsVisible="{Binding IsNewOffer}"
+                Text="Post Offer" />
+        <Button Grid.Row="9"
+                IsVisible="{Binding IsOwnOffer}"
+                Text="Save Offer" />
+        <Button Grid.Row="9"
+                IsVisible="{Binding IsOwnOffer,
+                                    Converter={StaticResource InvertedBoolenConverter}}"
+                Text="Contact Offerer" />
+
+    </Grid>
+</ContentPage>

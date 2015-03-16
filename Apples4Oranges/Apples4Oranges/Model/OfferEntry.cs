@@ -11,6 +11,10 @@ namespace Apples4Oranges.Model
         /// <summary>
         /// ForeignKey to the User who owns this offer
         /// </summary>
+        public long Id { get; set; }
+        /// <summary>
+        /// ForeignKey to the User who owns this offer
+        /// </summary>
         public long UserId { get; set; }
         /// <summary>
         /// Name of the product or service - offer name
@@ -51,5 +55,16 @@ namespace Apples4Oranges.Model
         /// Just a flag to mark Complete / Active
         /// </summary>
         public bool Active { get; set; }
-    }
+
+        /// <summary>
+        /// How many views on this offer
+        /// </summary>
+        public int Views { get; set; }
+
+        /// <summary>
+        /// How many responses for this offer
+        /// </summary>
+        public int Replies { get; set; }
+
+     }
 }
