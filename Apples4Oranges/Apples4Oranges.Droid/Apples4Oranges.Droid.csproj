@@ -82,6 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\drawable\apples.jpg" />
+    <AndroidResource Include="Resources\drawable\oranges.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Apples4Oranges\Apples4Oranges.csproj">
