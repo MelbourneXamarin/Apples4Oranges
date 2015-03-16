@@ -66,5 +66,9 @@ namespace Apples4Oranges.Model
         /// </summary>
         public int Replies { get; set; }
 
+        public string ViewsAndReplies
+        {
+            get { return string.Format("{0} views {1} replies", Views, Replies); }
+        }
      }
 }

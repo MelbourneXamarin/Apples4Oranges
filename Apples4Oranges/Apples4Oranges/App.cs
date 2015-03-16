@@ -13,7 +13,8 @@ namespace Apples4Oranges
         {
             // The root page of your application
             TabbedPage navPage = new HomePage();
-            MainPage = navPage;
+            var navHost = new NavigationPage(navPage);
+            MainPage = navHost;
         }
 
         protected override void OnStart()
