@@ -22,11 +22,6 @@ namespace Apples4Oranges.ViewModel
             }
         }
 
-        public string ViewsAndReplies
-        {
-            get {  return _offerEntry.Views +" views " +  _offerEntry.Replies +" Replies";}
-        }
-
         public bool IsOwnOffer
         {
             get { return _offerEntry.Id > 0 && _offerEntry.UserId == AppViewModel.CurrentUserId; }
@@ -36,7 +31,5 @@ namespace Apples4Oranges.ViewModel
         {
             get { return _offerEntry.Id <= 0; }
         }
-
-
     }
 }

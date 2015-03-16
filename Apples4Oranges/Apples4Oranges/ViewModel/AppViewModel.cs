@@ -9,6 +9,10 @@ namespace Apples4Oranges.ViewModel
     {
         public static ObservableCollection<OfferEntry>OfferEntries { get; set; }
         public static ObservableCollection<OfferEntry> MyOfferEntries { get; set; }
+
+        public static ObservableCollection<OfferResponse> OfferResponses { get; set; }
+        public static ObservableCollection<ResponseMessage> ResponseMessages { get; set; }
+
         public static int CurrentUserId { get { return 1; } }
         public static OfferEntry SelectedOfferEntry { get; set; }
         static AppViewModel()
@@ -45,6 +49,7 @@ namespace Apples4Oranges.ViewModel
                     Id = 3,
                     Name = "Peaches",
                     Location = "Collingwood",
+                    ImageLocation = "icon.png",
                     AvailableFrom = DateTime.Now,
                     AvailableTill = DateTime.Today.AddDays(2),
                     Views = 2,
@@ -56,6 +61,7 @@ namespace Apples4Oranges.ViewModel
                     Id = 4,
                     Name = "Lemons",
                     Location = "Fitzroy",
+                    ImageLocation = "icon.png",
                     AvailableFrom = DateTime.Now.AddDays(100),
                     AvailableTill = DateTime.Today.AddDays(3),
                     Views = 16,
@@ -64,7 +70,52 @@ namespace Apples4Oranges.ViewModel
                 }
             };
 
-            //OfferEntries = OfferEntries.Union(MyOfferEntries).ToObservableCollection();
+            foreach (OfferEntry offer in MyOfferEntries)
+                OfferEntries.Add(offer);
+
+            OfferResponses = new ObservableCollection<OfferResponse>
+            {
+                new OfferResponse {
+                    Id=1,
+                    OfferEntryId = 3,
+                    UserId = 2,
+                    UserName = "Vikings99",
+                    LatestMessage = "Hi, I am interested to trade...",
+                    Created = DateTime.Now.AddDays(-1),
+                    LastResponded = DateTime.Now.AddDays(-1),
+                    IsRead = true,
+                    IsStarred = false
+                },
+                 new OfferResponse {
+                    Id=2,
+                    OfferEntryId = 3,
+                    UserId = 22,
+                    UserName = "the_Earth",
+                    LatestMessage = "Hi, I got muffins...",
+                    Created = DateTime.Today.AddHours(10.5),
+                    LastResponded = DateTime.Today.AddHours(10.5),
+                    IsRead = true,
+                    IsStarred = false
+                }
+            };
+
+            ResponseMessages = new ObservableCollection<ResponseMessage>
+            {
+                new ResponseMessage{
+                    Id = 1,
+                    ResponseId = 1,
+                    Body = "Hi, I am interested to trade my Apples for your Peaches." + 
+                    "I have two baskets full of Pink Ladies. Buzz me back if interested",
+                    Timestamp = DateTime.Now.AddDays(-1)
+                },
+                 new ResponseMessage{
+                    Id = 1,
+                    ResponseId = 2,
+                    Body = "Hi, I got muffins bro... Can you give em Peaches for Free Hugs?" + 
+                    "Ping back if you are a kind soul.",
+                    Timestamp = DateTime.Today.AddHours(10.5)
+                }
+            };
         }
     }
 }

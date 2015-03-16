@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Apples4Oranges.OfferResponsePage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Apples4Oranges.Converters;assembly=Apples4Oranges"
+             Title="Offer Responses">
+
+    <ListView x:Name="listViewOnOffer"
+              HorizontalOptions="StartAndExpand"
+              VerticalOptions="StartAndExpand">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ImageCell Detail="{Binding LatestMessage}"
+                           ImageSource="icon.png"
+                           Text="{Binding HeaderText}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</ContentPage>

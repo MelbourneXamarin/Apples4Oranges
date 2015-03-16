@@ -2,7 +2,8 @@
 <ContentView x:Class="Apples4Oranges.Controls.TagView"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <Label x:Name="labelTag" HorizontalOptions="Center"
+    <Label x:Name="labelTag"
+           HorizontalOptions="Center"
            Text="Tag X"
            VerticalOptions="Center" />
 </ContentView>

@@ -40,6 +40,8 @@
     </Compile>
     <Compile Include="Controls\WrapLayout.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Model\OfferResponse.cs" />
+    <Compile Include="Model\ResponseMessage.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\OfferDetailsPageViewModel.cs" />
     <Compile Include="Model\UserProfile.cs" />
@@ -54,6 +56,12 @@
     </Compile>
     <Compile Include="View\OfferDetailsPage.xaml.cs">
       <DependentUpon>OfferDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ResponseMessagePage.xaml.cs">
+      <DependentUpon>ResponseMessagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OfferResponsePage.xaml.cs">
+      <DependentUpon>OfferResponsePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OfferPage.xaml.cs">
       <DependentUpon>OfferPage.xaml</DependentUpon>
@@ -101,6 +109,20 @@
     <EmbeddedResource Include="Controls\TagView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\OfferResponsePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>
+      </SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\ResponseMessagePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>
+      </SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

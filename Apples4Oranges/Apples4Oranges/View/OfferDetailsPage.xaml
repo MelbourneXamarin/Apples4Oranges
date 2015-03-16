@@ -76,10 +76,14 @@
             <Button Grid.Row="9"
                     IsVisible="{Binding IsOwnOffer}"
                     Text="Save Offer" />
+            <Button Grid.Row="10"
+                    Clicked="OnViewResponses_Clicked"
+                    IsVisible="{Binding IsOwnOffer}"
+                    Text="View Responses" />
             <Button Grid.Row="9"
                     IsVisible="{Binding IsOwnOffer,
                                         Converter={StaticResource InvertedBoolenConverter}}"
-                    Text="Contact Offerer" />
+                    Text="Let's Barter" />
 
 
         </StackLayout>

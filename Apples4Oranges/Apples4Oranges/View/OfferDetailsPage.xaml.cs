@@ -16,6 +16,12 @@ namespace Apples4Oranges
             var viewModel = new OfferDetailsPageViewModel();
             viewModel.OfferEntry = AppViewModel.SelectedOfferEntry;
             this.BindingContext = viewModel;
-        }		 
+        }
+		
+        private async void OnViewResponses_Clicked(object sender, EventArgs e)
+        {
+            OfferResponsePage response = new OfferResponsePage();
+            await Navigation.PushAsync(response);
+        }
     }
 }
