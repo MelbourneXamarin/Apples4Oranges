@@ -5,96 +5,32 @@
              xmlns:converters="clr-namespace:Apples4Oranges.Converters;assembly=Apples4Oranges"
              Title="MyOffers"
              Padding="10, 0">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <converters:BaseTypeToStringFormatConverter x:Key="AvailableTillDateConverter"
-                                                        Format="d MMMM yyyy"
-                                                        Prefix="   " />
-            <converters:BaseTypeToStringFormatConverter x:Key="ImageLocationConverter" Prefix="..\Assets\Images\" />
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="60" />
-            </Grid.ColumnDefinitions>
-            <Button x:Name="postNewOfferButton"
-                    Grid.Column="1"
-                    FontSize="Small"
-                    HeightRequest="20"
-                    Text="Add" />
-            <Label Grid.Row="0"
-                   Grid.Column="0"
-                   FontSize="18"
-                   HorizontalOptions="Start"
-                   Text="Post a new Offer"
-                   VerticalOptions="Center" />
-        </Grid>
-
-        <Label Grid.Row="1"
-               FontSize="Large"
-               Text="Current Offers"
-               YAlign="Center" />
-
         <ListView x:Name="listViewMyOffer"
-                  Grid.Row="2"
-                  BackgroundColor="Transparent"
-                  RowHeight="70">
+                  Grid.Row="0"
+                  HorizontalOptions="StartAndExpand"
+                  VerticalOptions="StartAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="65" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Image BackgroundColor="Gray" Source="{Binding ImageSource, Converter={StaticResource ImageLocationConverter}}" />
-                            <Grid Grid.Column="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="60" />
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <Label Grid.Row="0"
-                                       Grid.Column="0"
-                                       FontSize="24"
-                                       HorizontalOptions="StartAndExpand"
-                                       Text="{Binding Name}"
-                                       YAlign="Center" />
-                                <Label Grid.Row="0"
-                                       Grid.Column="1"
-                                       FontSize="Small"
-                                       HorizontalOptions="EndAndExpand"
-                                       Text="{Binding ViewsAndReplies}" />
-
-                                <StackLayout Grid.Row="1"
-                                             Grid.Column="0"
-                                             Grid.ColumnSpan="2"
-                                             Orientation="Horizontal">
-                                    <Label FontSize="Medium" Text="{Binding Location}" />
-                                    <Label FontSize="Medium"
-                                           HorizontalOptions="EndAndExpand"
-                                           Text="{Binding AvailableTill,
-                                                          Converter={StaticResource AvailableTillDateConverter}}" />
-                                </StackLayout>
-                            </Grid>
-                        </Grid>
-                    </ViewCell>
+                    <ImageCell Detail="{Binding MyOfferDetailText}"
+                               ImageSource="{Binding ImageLocation}"
+                               Text="{Binding Name}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+
+        <Button x:Name="postNewOfferButton"
+                Grid.Row="1"
+                FontSize="Medium"
+                Text="Post New Offer" />
     </Grid>
 </ContentPage>

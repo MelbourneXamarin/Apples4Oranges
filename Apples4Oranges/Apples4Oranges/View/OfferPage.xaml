@@ -10,7 +10,7 @@
               VerticalOptions="StartAndExpand">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <ImageCell Detail="{Binding InfoText}"
+                <ImageCell Detail="{Binding OfferDetailText}"
                            ImageSource="{Binding ImageLocation}"
                            Text="{Binding Name}" />
             </DataTemplate>

@@ -71,9 +71,17 @@ namespace Apples4Oranges.Model
             get { return string.Format("{0} views {1} replies", Views, Replies); }
         }
 
-        public string InfoText
+        public string OfferDetailText
         {
             get { return string.Format("{0} - expiring on {1}", Location, AvailableTill.ToString("M"));
+            }
+        }
+
+        public string MyOfferDetailText
+        {
+            get
+            {
+                return string.Format("Ends {0} {1}", AvailableTill.ToString("M"),ViewsAndReplies.PadLeft(40,' '));
             }
         }
      }
