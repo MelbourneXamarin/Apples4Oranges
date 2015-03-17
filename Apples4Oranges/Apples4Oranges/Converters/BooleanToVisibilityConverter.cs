@@ -24,6 +24,46 @@ namespace Apples4Oranges.Converters
 
         #endregion
     }
+    public class ValueToBooleanConverter : IValueConverter
+    {
+        private bool _inverted;
+
+        private string _valueToCheck = String.Empty;
+
+        public string ValueToCheck
+        {
+            get { return _valueToCheck; }
+            set { _valueToCheck = value; }
+        }
+
+        public bool Inverted
+        {
+            get { return _inverted; }
+            set { _inverted = value; }
+        }
+
+        #region IValueConverter implementation
+
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is string)
+            {
+                if (Inverted)
+                    return !(ValueToCheck.Equals(value.ToString()));
+                else
+                    return (ValueToCheck.Equals(value.ToString()));
+            }
+              
+            return false;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+    }
 
     public sealed class BaseTypeToStringFormatConverter : IValueConverter
     {
