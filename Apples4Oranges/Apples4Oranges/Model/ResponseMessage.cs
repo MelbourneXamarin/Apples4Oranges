@@ -17,7 +17,7 @@ namespace Apples4Oranges.Model
         /// <summary>
         /// The Response Wrapper linked to this message
         /// </summary>
-        public long ResponseId { get; set; }
+        public OfferResponse Response { get; set; }
 
         /// <summary>
         /// Content of the message
@@ -33,5 +33,12 @@ namespace Apples4Oranges.Model
         /// Is there any Image associated with this Message?
         /// </summary>
         public int? ImageId { get; set; }
+
+        public string ImageUrl { get; set; }
+
+        /// <summary>
+        /// Owner of this particular chat Response
+        /// </summary>
+        public UserProfile User { get; set; }
     }
 }

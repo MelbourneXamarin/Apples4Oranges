@@ -65,6 +65,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomRenderers\MessageRenderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +74,11 @@
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\layout\image_item_opponent.axml" />
+    <AndroidResource Include="Resources\layout\image_item_owner.axml" />
+    <AndroidResource Include="Resources\layout\item_row.axml" />
+    <AndroidResource Include="Resources\layout\message_item_opponent.axml" />
+    <AndroidResource Include="Resources\layout\message_item_owner.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
@@ -84,6 +90,9 @@
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\drawable\apples.jpg" />
     <AndroidResource Include="Resources\drawable\oranges.jpg" />
+    <AndroidResource Include="Resources\drawable\bubble_green.9.png" />
+    <AndroidResource Include="Resources\drawable\bubble_yellow.9.png" />
+    <AndroidResource Include="Resources\drawable\empty_contact.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Apples4Oranges\Apples4Oranges.csproj">

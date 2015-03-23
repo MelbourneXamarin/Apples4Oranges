@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Apples4Oranges.Model
 {
-    internal class OfferEntry
+    public class OfferEntry
     {
         /// <summary>
         /// ForeignKey to the User who owns this offer
@@ -15,7 +15,7 @@ namespace Apples4Oranges.Model
         /// <summary>
         /// ForeignKey to the User who owns this offer
         /// </summary>
-        public long UserId { get; set; }
+        public UserProfile Owner { get; set; }
         /// <summary>
         /// Name of the product or service - offer name
         /// </summary>

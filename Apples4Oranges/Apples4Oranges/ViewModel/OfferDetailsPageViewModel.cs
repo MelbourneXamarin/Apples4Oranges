@@ -24,7 +24,7 @@ namespace Apples4Oranges.ViewModel
 
         public bool IsOwnOffer
         {
-            get { return _offerEntry.Id > 0 && _offerEntry.UserId == AppViewModel.CurrentUserId; }
+            get { return _offerEntry.Id > 0 && _offerEntry.Owner.UserId == AppViewModel.CurrentUserId; }
         }
 
         public bool IsNewOffer

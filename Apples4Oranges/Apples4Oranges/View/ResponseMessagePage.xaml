@@ -12,25 +12,29 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        <ListView x:Name="listViewResponseMessages"
-                  Grid.Row="0"
+        <ListView x:Name="listViewResponseMessages">
+            <!--Grid.Row="0"
                   HorizontalOptions="StartAndExpand"
                   VerticalOptions="StartAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <!--<StackLayout BackgroundColor="Green">
+            -->
+            <!--<StackLayout BackgroundColor="Green">
                     <Label HorizontalOptions="StartAndExpand" Text="{Binding Body}" />
                     <Label HorizontalOptions="EndAndExpand" Text="{Binding TimeStamp}" />
                 </StackLayout>-->
+            <!--
                     <ImageCell Detail="3 Mar 10:33"
                                ImageSource=""
                                Text="{Binding Body}" />
                 </DataTemplate>
-            </ListView.ItemTemplate>
+            </ListView.ItemTemplate>-->
         </ListView>
         <StackLayout Grid.Row="1" Orientation="Horizontal">
-            <Entry Placeholder="Send a message" Text="" HorizontalOptions="FillAndExpand" />
-            <Button Text="Send" HorizontalOptions="End"/>
+            <Entry HorizontalOptions="FillAndExpand"
+                   Placeholder="Send a message"
+                   Text="" />
+            <Button HorizontalOptions="End" Text="Send" />
         </StackLayout>
     </Grid>
 </ContentPage>

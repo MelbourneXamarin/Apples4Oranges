@@ -9,7 +9,7 @@ namespace Apples4Oranges.Model
     /// <summary>
     /// Wrapper to the chat between the Original Poster and Responder
     /// </summary>
-    class OfferResponse
+    public class OfferResponse
     {
         /// <summary>
         /// Id of this OfferResponse
@@ -25,12 +25,7 @@ namespace Apples4Oranges.Model
         /// ID of the User Responding to the offer
         /// Cannot be the same as the Original Poster
         /// </summary>
-        public int UserId { get; set; }
-
-        /// <summary>
-        /// The UserName of the Responding / interested User
-        /// </summary>
-        public string UserName { get; set; }
+        public UserProfile RespondingUser { get; set; }
 
         /// <summary>
         /// A glimpse of the latest msg to show in the Wrapper
@@ -59,7 +54,7 @@ namespace Apples4Oranges.Model
 
         public string HeaderText
         {
-            get { return String.Format("{0}{1}{1}{2}", UserName.PadRight(50,' '), "\t", LastResponded.ToString("d MMM")); }
+            get { return String.Format("{0}{1}{1}{2}", RespondingUser.UserHandle.PadRight(50,' '), "\t", LastResponded.ToString("d MMM")); }
         }
 
     }
