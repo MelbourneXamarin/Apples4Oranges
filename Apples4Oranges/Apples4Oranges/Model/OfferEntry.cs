@@ -81,7 +81,7 @@ namespace Apples4Oranges.Model
         {
             get
             {
-                return string.Format("Ends {0} {1}", AvailableTill.ToString("M"),ViewsAndReplies.PadLeft(40,' '));
+                return string.Format("Ends {0} {1}", AvailableTill.ToString("M"),ViewsAndReplies.PadLeft(30,' '));
             }
         }
      }
