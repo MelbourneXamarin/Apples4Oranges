@@ -14,10 +14,12 @@ namespace Apples4Oranges.Controls
         public TagView()
         {
             InitializeComponent();
+            labelTag.GestureRecognizers.Add(new TapGestureRecognizer((view) => OnTagTapped()));
+            labelTagRemove.GestureRecognizers.Add(new TapGestureRecognizer((view) => OnTagTapped()));
         }
 
         /// <summary>
-        /// Backing Storage for the Orientation property
+        /// Backing Storage for the Tag property
         /// </summary>
         public static readonly BindableProperty TagProperty =
             BindableProperty.Create<TagView, String>(w => w.Tag,
@@ -29,6 +31,8 @@ namespace Apples4Oranges.Controls
             ctrl.labelTag.Text = newValue;
         });
 
+
+        
         /// <summary>
         /// Orientation (Horizontal or Vertical)
         /// </summary>
@@ -42,6 +46,13 @@ namespace Apples4Oranges.Controls
             }
         }
 
-       
+        
+        void OnTagTapped()
+        {
+            if (labelTag.Text == "Add...")
+                return;
+
+            this.IsVisible = false;
+        }
     }
 }

@@ -10,7 +10,7 @@
                                                 ValueToCheck="Add..." />
         </ResourceDictionary>
     </ContentView.Resources>
-    <StackLayout Orientation="Horizontal">
+    <StackLayout x:Name="stackLayout" Orientation="Horizontal">
         <Label x:Name="labelTag"
                HorizontalOptions="Center"
                Text="Tag X"
